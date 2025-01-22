@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testing-website tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Tailwind configuration for animations */
+        @layer utilities {
+            .fade-in {
+                animation: fadeIn 2s ease-in-out;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+
+            .slide-in {
+                animation: slideIn 1.5s ease-in-out;
+            }
+            @keyframes slideIn {
+                from { transform: translateX(-100%); }
+                to { transform: translateX(0); }
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Animated Tailwind Website</h1>
+            <button class="md:hidden block text-white focus:outline-none" id="menu-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+            <ul id="menu" class="hidden md:flex space-x-6">
+                <li><a href="#" class="hover:underline">Home</a></li>
+                <li><a href="#features" class="hover:underline">Features</a></li>
+                <li><a href="#about" class="hover:underline">About</a></li>
+                <li><a href="#contact" class="hover:underline">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="h-screen bg-blue-600 text-white flex items-center justify-center fade-in">
+        <div class="text-center">
+            <h1 class="text-5xl font-bold mb-4">Welcome to the Animated Site</h1>
+            <p class="text-xl mb-6">A modern website built with Tailwind CSS</p>
+            <button class="bg-white text-blue-600 px-6 py-2 rounded hover:bg-blue-700 hover:text-white transition-all">Get Started</button>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-200">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Features</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6 slide-in">
+                    <img src="https://via.placeholder.com/150" alt="Feature 1" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-center mb-2">Feature One</h3>
+                    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 slide-in">
+                    <img src="https://via.placeholder.com/150" alt="Feature 2" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-center mb-2">Feature Two</h3>
+                    <p class="text-center">Sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 slide-in">
+                    <img src="https://via.placeholder.com/150" alt="Feature 3" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-center mb-2">Feature Three</h3>
+                    <p class="text-center">Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <img src="https://via.placeholder.com/300" alt="About" class="w-full md:w-1/2 rounded-lg mb-6 md:mb-0 slide-in">
+                <div class="md:ml-8 text-center md:text-left">
+                    <h2 class="text-3xl font-bold mb-4">About Us</h2>
+                    <p class="text-lg">We are committed to creating beautiful, functional websites that engage and inspire. Our team specializes in modern design and development techniques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-200">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Contact Us</h2>
+            <form class="max-w-xl mx-auto bg-white rounded-lg shadow-lg p-8 fade-in">
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-bold mb-2">Name</label>
+                    <input type="text" id="name" class="w-full border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:border-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-bold mb-2">Email</label>
+                    <input type="email" id="email" class="w-full border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:border-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-sm font-bold mb-2">Message</label>
+                    <textarea id="message" class="w-full border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:border-blue-500" rows="5"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-all">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-blue-600 text-white text-center">
+        <p>&copy; 2025 Animated Tailwind Website. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
